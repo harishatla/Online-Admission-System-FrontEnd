@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card mt-3">
+            <form [formGroup]="editForm" (ngSubmit)="editBranch()">
+        <div class="card-header bg-success display-4">
+           Edit Branch Form
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="branchId">Branch Id:</label>
+                <input 
+                    type="text" 
+                    class="form-control mx-2" 
+                    id="branchId"
+                    name="branchId"
+                    formControlName="branchId">
+                </div>
+                <div class="form-group">
+                    <label for="branchName">Branch Name:</label>
+                    <input 
+                        type="text" 
+                        class="form-control mx-2" 
+                        id="branchName"
+                        name="branchName"
+                        formControlName="branchName">
+                        <span *ngIf="editForm.get('branchName')?.touched && editForm.get('branchName')?.errors?.required"
+                        class="text-danger small">
+                        branch Name is mandatory!
+                  </span>
+                  <span *ngIf="editForm.get('branchName')?.touched && editForm.get('branchName')?.errors?.minlength"
+                        class="text-danger small">
+                        branch Name should be minimum 3 characters!
+                  </span>
+                    </div>
+        
+                <div class="form-group">
+                    <label for="branchDescription">Branch Description:*</label>
+                    <input 
+                        type="text" 
+                        class="form-control mx-2" 
+                        id="branchDescription"
+                        name="branchDescription"
+                        formControlName="branchDescription">
+                 
+                    </div>
+    
+    
+        </div>
+        <div class="card-footer">
+            <button 
+            type="submit" 
+            class="btn btn-success">
+            Edit Branch
+        </button>
+        </div>
+    </form>
+      </div>
+    </div>

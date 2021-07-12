@@ -1,0 +1,37 @@
+ <div id="bgimage">
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+         <b>Track Application:</b>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Enter Application ID:</h5>
+          <div class="input-group rounded">
+            <input 
+            type="text" 
+            class="form-control rounded" 
+            placeholder="Application ID" 
+            name="applicationId"
+            [(ngModel)]='applicationId' 
+            aria-label="Search"
+            aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon" (click)='checkStatus(applicationId)' type="submit">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+        </div>
+        <div class="footer">
+            <h3> &nbsp;{{applicationStatus}} </h3>
+        <h3> &nbsp;{{applicationName}}</h3> &nbsp;
+        <h5>{{applicationMessage}}</h5>
+        <h3 id="error"> {{myError}} </h3>
+        </div>
+       
+      </div>
+      <div>
+        
+    </div>
+
+</div>
+</div>
+ 

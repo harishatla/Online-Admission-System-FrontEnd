@@ -1,0 +1,197 @@
+<!-- template file for Application Form -->
+
+<marquee class="test-color text-success">
+    <b><a>Applications for 2021-22 batch are now open....!!! <span style="color: red;">&nbsp;|</span></a></b>&nbsp;&nbsp;
+    <b><a style="color: blue;">Odd Semester External Back Paper Registration 2021-22(BPUT)<span>&nbsp;|</span></a> </b>&nbsp;&nbsp;
+    <b><a style="color: red;">Webinar on Industry Internet of Things-2021</a></b>
+  </marquee>
+
+  <body>
+<div class="background">
+    <div class="container w-50 ">
+        <div class="card mt-4">
+            <form #myForm="ngForm" (ngSubmit)="addApplication( )">
+                <div class="card-header bg-success text-center">
+                    Application Form
+                </div>
+                <div class="card-body height-50">
+                    <div class="form-group">
+                        <label for="FullName">Full Name:</label>
+                        <input class="form-control mx-2" 
+                        type="text" 
+                            placeholder="Enter Full Name" 
+                            id="FullName"
+                            name="FullName" 
+                            required 
+                            minlength="3" 
+                            maxlength="15" 
+                            #myApplicantFuLLName="ngModel"
+                            [(ngModel)]="addApplicationData.applicantFuLLName">
+                        <span *ngIf="myApplicantFuLLName.touched && myApplicantFuLLName.errors?.required"
+                            class="text-danger small">
+                            Applicant full name is mandatory!
+                        </span>
+                        <span *ngIf="myApplicantFuLLName.touched && myApplicantFuLLName.errors?.minlength"
+                            class="text-danger small">
+                            Applicant full name should be minimum of 3 characters!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="DOB">Date Of Birth</label>
+                        <input class="form-control mx-2" 
+                                type="date" 
+                                placeholder="Enter DOB" 
+                                id="DOB" 
+                                name="DOB"
+                                [(ngModel)]="addApplicationData.dateOfBrith"
+                            >
+                    </div>
+                    <div class="form-group">
+                        <label for="Highest Qualification">Highest Qualification:</label>
+                        <input class="form-control mx-2" 
+                            type="text" 
+                            placeholder="Ex: 12th/Btech"
+                            id="Highest Qualification" 
+                            name="Highest Qualification" 
+                            required 
+                            minlength="2"
+                            maxlength="15" 
+                            #myHighestQualification="ngModel"
+                            [(ngModel)]="addApplicationData.highestQualification">
+                        <span *ngIf="myHighestQualification.touched && myHighestQualification.errors?.required"
+                            class="text-danger small">
+                            Highest qualification is mandatory!
+                        </span>
+                        <span *ngIf="myHighestQualification.touched && myHighestQualification.errors?.minlength"
+                            class="text-danger small">
+                            Highest Qualification should be minimum of 2 characters!
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Highest Qualification Percentage">Highest Qualification Percentage:</label>
+                        <input class="form-control mx-2" 
+                                type="text" 
+                                placeholder=" Enter Percentage"
+                                id="Highest Qualification Percentage" 
+                                name="Highest Qualification Percentage" 
+                                required
+                                #myHighestQualificationPercentage="ngModel"
+                                [(ngModel)]="addApplicationData.highestQualificationPercentage">
+
+                        <span
+                            *ngIf="myHighestQualificationPercentage.touched && myHighestQualificationPercentage.errors?.required"
+                            class="text-danger small">
+                            Highest Qualification Percentage is mandatory!
+                        </span>
+
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope-square"></i>&nbsp;Email:</label>
+                        <input class="form-control mx-2" 
+                                type="email" 
+                                placeholder="Enter Email address" 
+                                id="Email"
+                                name="Email" 
+                                [(ngModel)]="addApplicationData.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Silicon Institute of technology"><i class="fas fa-university"></i>&nbsp; College:&nbsp;</label>
+                        <select class="form-control" 
+                            [(ngModel)]="addApplicationData.collegePojo.collegeRegId"
+                            [ngModelOptions]="{standalone: true}">
+                            <option [value]='addApplicationData.collegePojo.collegeRegId'>
+                                {{addApplicationData.collegePojo.collegeName}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="course"> Course: </label>
+                        <select class="form-control" 
+                            [(ngModel)]="addApplicationData.coursePojo.courseId"
+                            (change)=loadBranches($event) 
+                            [ngModelOptions]="{standalone: true}">
+                            <option [value]='course.courseId' *ngFor="let course of allCourses">
+                                {{course.courseId}}-{{course.courseName}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="branch"> Branch: </label>
+                        <select class="form-control" 
+                            [(ngModel)]="addApplicationData.branchPojo.branchId"
+                            (change)=setBranch($event) 
+                            [ngModelOptions]="{standalone: true}">
+                            <option [value]='branch.branchId' *ngFor="let branch of allBranches">
+                                {{branch.branchId}}-{{branch.branchName}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <h4 style="color: green;">Please Make payment for Application:</h4>
+                        <label for="FullName"><i class="fas fa-credit-card"></i>&nbsp; Card Name:</label>
+                        <input class="form-control " 
+                        type="text" id="FullName" 
+                        placeholder="Ex: A.Harish">
+                    </div>
+                    <div class="form-group">
+                        <label for="CardNumber">Card Number:</label>
+                        <input class="form-control " 
+                        type="text" 
+                        id="CardNumber" 
+                        placeholder="Ex: 4591/1501/2811/8635">
+                    </div>
+                    <div class="form-group">
+                        <label for="CVV">Enter CVV:</label>
+                        <input class="form-control " 
+                            placeholder="Ex:403" 
+                            type="text" 
+                            id="CVV">
+                    </div>
+                    <div class=form-group>
+                        <label>Select Expiry Date:</label>
+                        <select class="form-control" name='expireMM' id='expireMM'>
+                            <option value=''>Month</option>
+                            <option value='01'>January</option>
+                            <option value='02'>February</option>
+                            <option value='03'>March</option>
+                            <option value='04'>April</option>
+                            <option value='05'>May</option>
+                            <option value='06'>June</option>
+                            <option value='07'>July</option>
+                            <option value='08'>August</option>
+                            <option value='09'>September</option>
+                            <option value='10'>October</option>
+                            <option value='11'>November</option>
+                            <option value='12'>December</option>
+                        </select>
+                        <select class="form-control my-2" name='expireYY' id='expireYY'>
+                            <option value=''>Year</option>
+                            <option value='20'>2020</option>
+                            <option value='21'>2021</option>
+                            <option value='22'>2022</option>
+                            <option value='23'>2023</option>
+                            <option value='24'>2024</option>
+                        </select>
+                        <input class="inputCard" 
+                            type="hidden" 
+                            name="expiry" 
+                            id="expiry" 
+                            maxlength="4" />
+                        <div class="form-group">
+                            <label for="Amount">Please Pay Amount: </label><br>
+                            <input class="form-control" value="500" type="text" id="Amount">
+                            <small style="color: green;">Please make a payment of 500</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer" style="text-align: center;">
+                    <button class="btn btn-success" 
+                    type="submit"  
+                    [disabled]="!myForm.valid">Submit</button>
+                </div>
+            </form>
+        </div>     
+    </div>   
+</div>
+  </body>

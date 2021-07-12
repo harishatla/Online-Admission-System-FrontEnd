@@ -1,0 +1,29 @@
+<div class="container">
+    <p class="display-4">{{ title }}</p>
+    <button type="button" class="btn btn-success my-2"
+    (click)='goToAdd()'>+</button>
+
+    <h3 class="bg-warning text-white">
+        {{ myError }}
+    </h3>
+    
+<ul class="list-group mt-3">
+    <li 
+        class="list-group-item" 
+        *ngFor="let branch of allBranches">
+        <div class='d-flex justify-content-between'>
+            <div>
+                {{branch.branchId}}-{{ branch.branchName }} ({{branch.branchDescription}})
+            </div>
+            <div>
+                <button 
+                    type='button' 
+                    class='btn btn-warning ml-3'
+                    (click)='editBranch(branch.branchId)'>
+                    Edit
+                </button>
+            </div>
+        </div>
+    </li>
+</ul>
+</div>

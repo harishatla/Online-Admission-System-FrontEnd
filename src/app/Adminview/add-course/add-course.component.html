@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="card mt-3 width-50%">
+        <form #myForm="ngForm" (ngSubmit)="addCourse()">
+            <div class="card-header bg-success display-4">
+                Add Course Form
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="courseName">Course Name:</label>
+                    <input type="text" class="form-control mx-2" placeholder="Enter course name" id="courseName"
+                        name="courseName" required minlength="3" maxlength="15" #myCourseName="ngModel"
+                        [(ngModel)]="addCourseData.courseName">
+                    <span *ngIf="myCourseName.touched && myCourseName.errors?.required" class="text-danger small">
+                        course Name is mandatroy!
+                    </span>
+                    <span *ngIf="myCourseName.touched && myCourseName.errors?.minlength" class="text-danger small">
+                        course Name should be minimum of 3 characters!
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="eligibility">Eligibility:</label>
+                    <input type="type" class="form-control mx-2" placeholder="Enter your eligibility" id="eligibility"
+                        name="eligibility" required
+                        minlength="2"
+                        maxlength="10"
+                        #myEligibility="ngModel" [(ngModel)]="addCourseData.eligibility">
+                        <span *ngIf="myEligibility.touched && myEligibility.errors?.required" class="text-danger small" >
+                            Your Eligibility is mandatory!
+                        </span>
+                        <span *ngIf="myEligibility.touched && myEligibility.errors?.minlength" class="text-danger small" >
+                            Eligibility should be minimum of 2 characters!
+                        </span>
+                </div>
+
+
+                <div>
+                    <label>College ID:</label>
+                    <input type="text" class="form-control mx-2"
+                    name="collegeRegId"
+                     [(ngModel)]='collegeRegId'
+                     [value]='collegeRegId'>
+                </div>
+                <div class="form-group">
+                    <label for="branch"> Branch: </label>
+                    <select class="form-control" 
+                    #branch
+                    [(ngModel)] = "branchId"
+                      [ngModelOptions]="{standalone: true}">
+                    <option  
+                    [value]='branch.branchId' *ngFor="let branch of allBranchesPojo">  
+                        {{branch.branchId}}-{{branch.branchName}}
+                    </option>
+                    </select>
+                </div> 
+                <div class="form-group"> 
+                    <p style="color: green;">*Please select branch and press the add button</p> 
+                    <button type="button" class="form-control btn  btn-success " (click)='addBranches(branch.value)' style="width: 20%;  ">+</button> 
+                   
+                </div>
+                <div *ngFor='let newBranch of allNewBranches'>
+                    {{newBranch.branchId}}-{{newBranch.branchName}}&nbsp;({{newBranch.branchDescription}})<br>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-success" [disabled]="!myForm.valid"> 
+                    Add Course
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+ 

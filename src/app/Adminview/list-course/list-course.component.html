@@ -1,0 +1,27 @@
+<div class="container">
+    <p class="display-4">{{ title }}</p>
+    <h4> Please Click Add if you want to add more courses</h4>
+    <button type="button" class="btn btn-success my-2 text-center" (click)='goToAdd()'>+</button>
+
+    <h3 class="bg-warning text-white">
+        {{ myError }}
+    </h3>
+
+    <ul class="list-group mt-3">
+        <li class="list-group-item" *ngFor="let course of allCourses">
+            <div>
+                <div class='d-flex justify-content-between '>
+                    <div> 
+                        {{course.courseId}}-{{ course.courseName }}  
+                    </div>
+                    <div>
+                         
+                        <button type='button' class='btn btn-danger ml-3' (click)='deleteCourse(course.courseId)'>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

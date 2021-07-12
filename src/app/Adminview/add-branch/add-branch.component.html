@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card mt-3">
+            <form #myForm="ngForm" (ngSubmit)="addBranch()"> 
+        <div class="card-header bg-success display-4">
+            Add Branch Form
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="branchName">Branch Name:</label>
+                <input 
+                    type="text" 
+                    class="form-control mx-2" 
+                    placeholder="Enter branch name" 
+                    id="branchName"
+                    name="branchName"
+                    required
+                    minlength="2"
+                    maxlength="15"
+                    #myBranchName="ngModel"
+                    [(ngModel)]="addBranchData.branchName">
+                   <span *ngIf="myBranchName.touched && myBranchName.errors?.required" class="text-danger small">
+                      Branch Name is mandatroy!
+                   </span>
+                   <span *ngIf="myBranchName.touched && myBranchName.errors?.minlength" class="text-danger small">
+                    Branch Name should be minimum of 2 characters!
+                 </span>
+                </div>
+              
+                <div class="form-group">
+                <label for="branchDescription">Branch Description:</label>
+                <input 
+                    type="type" 
+                    class="form-control mx-2" 
+                    placeholder="Enter branch description" 
+                    id="branchDescription"
+                    name="branchDescription"
+                    [(ngModel)]="addBranchData.branchDescription">
+                </div>
+        </div>
+        <div class="card-footer">
+            <button 
+            type="submit" 
+            class="btn btn-success"
+            [disabled]="!myForm.valid">
+            Add Branch
+        </button>
+        </div>
+    </form>
+      </div>
+    </div>

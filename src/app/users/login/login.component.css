@@ -1,0 +1,23 @@
+body{
+    background: url('https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    
+}
+.card{
+    margin-top: 25%;
+     
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 25%;
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+       
+    
+}
+.card:hover {
+    transform: scale(1.1);
+  }

@@ -1,0 +1,71 @@
+.submitted{
+    margin-top: 5%;
+    text-align: center;
+}
+.ApplicationsDetails{
+    border-style: solid;
+    border-color: red green blue yellow; 
+    margin-top: 5%;
+     
+}
+#submitted{
+    color: green;
+    text-align: center;
+}
+#reference{
+    color: red;
+    text-align: center;
+}
+#id{
+    text-align: center;
+    
+}
+.alert{
+    width: 50%;
+    text-align: center;
+    margin-left: 30%;
+}
+#qualification{
+    border-style: solid;
+    border-color:black; 
+    margin-left: 25px;
+    margin-bottom: 3px;
+    text-indent: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(145, 206, 203, 0.623);
+    
+
+}
+#Application{
+    border-style:solid;
+    border-color:black; 
+    margin-left: 25px;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgba(145, 206, 203, 0.623);
+     
+}
+#course{
+    border-style: solid;
+    border-color:black; 
+    margin-left: 25px;
+    text-align: center;
+     border-radius: 10px;
+     background: rgba(145, 206, 203, 0.623);
+
+}
+#heading{
+    color: darkgreen;
+    font-style: oblique;
+    font-family: monospace;
+    background: rgba(118, 192, 188, 0.623);
+}
+mark{
+    color: black;
+    background-color: rgb(169, 245, 169);
+}
+#alert{
+    margin-top: 10px;
+}

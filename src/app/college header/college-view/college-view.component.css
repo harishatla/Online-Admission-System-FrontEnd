@@ -1,0 +1,71 @@
+.carousel-inner{
+    height: 20rem;
+}
+.corousel{
+    margin: 10px;
+}
+.slider{
+    margin-top: 5px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 15px;
+}
+.cards{
+    margin-top: 15px;
+    margin-right: 35px;
+    margin-left: 35px;
+    margin-bottom: 15px;
+}
+.heading1{
+     font-family: cursive;
+    text-align: center;
+    color: rgb(168, 32, 123);
+}
+#h1{
+    font-family: sans-serif;
+    color: rgb(34, 42, 43);
+}
+#h2{
+    color: cadetblue;
+}
+#i1{
+    margin-left: 20px;
+
+}
+
+ .card:hover{
+    transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+ 
+#facts{
+    border-bottom: black;
+    border-bottom: dimgray;
+}
+video {
+    max-width: 100%;
+  }
+  @media only screen and (min-width: 768px) {
+    iframe{
+      height: 13em;
+    }
+    .card{
+       
+      width: 25%;
+      margin-top: 20px;
+      margin-left: 100px;
+      margin-bottom: 20px;
+       
+    }
+}
+.container{
+    display: grid;
+}
+
+ 
+     
+       
+  
+
+
+  

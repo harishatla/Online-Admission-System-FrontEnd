@@ -1,0 +1,39 @@
+ 
+<section class="ApplicationDetails ">
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close my-10" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong id="alert">Success!</strong> Your application successfully submitted.....!!!
+      </div>
+    <h5 id="reference">Please Note your Application ID for further Reference</h5>
+    <div *ngFor="let application of applications" class="ApplicationDetails">
+        <h2 id="id">Your Application ID is: {{application.applicationId}}</h2>  
+    </div> 
+</section>
+
+<div class="container ">
+    <div id="Application" *ngFor="let application of applications">
+        <h2 id="heading"><u>Application Details:</u></h2><br>
+        <h4>Application Id:&nbsp;<strong> {{application.applicationId}} </strong></h4>
+        <br>
+        <h4>Applicant Name:&nbsp;<strong> {{application.applicantFuLLName}}</strong>  </h4>
+        <br>
+        <h4>DOB:&nbsp;<strong>{{application.dateOfBrith | date}}</strong></h4>
+        <br>
+    </div>
+    <div class="QualificationDetails" *ngFor="let application of applications">
+        <div id="qualification">
+        <h2 id="heading"><u>QualificationDetails</u></h2><br>
+        <h4>Highest qualification:  <strong> {{application.highestQualification}}</strong> </h4>
+        <br>
+        <h4>Highest Qualificaton Percentage: <strong> {{application.highestQualificationPercentage}} </strong></h4>
+        <br>
+    </div>
+    <div id="course" *ngFor="let application of applications">
+        <h2 id="heading"><u>Selected Course:</u></h2>
+        <h4>Selected Course:  <strong>{{application.coursePojo.courseName}}</strong> </h4>
+        <br>
+        <h4>Selected Branch: <strong>{{application.branchPojo.branchName}}</strong></h4>
+        <br>
+    </div>
+    </div>
+</div>

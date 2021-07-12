@@ -1,0 +1,60 @@
+.glow {
+    font-size: 32px;
+    text-align: center;
+    color: blanchedalmond;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    
+  }
+  /* @-webkit-keyframes glow {
+     
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #4af358, 0 0 40px #a3f112, 0 0 50px #31eb2b, 0 0 60px #1be960, 0 0 70px #28f739 ;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #d8ff4d, 0 0 40px #e4a548, 0 0 50px #a9b31f, 0 0 60px #d0f30c, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  } */
+/* h1{
+    text-align: center;
+    color: blanchedalmond;
+} */
+html,body{
+    background-image: url("src\assets\images\bgimage.jpg");
+   
+ 
+    /* background-size: cover; */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;  
+    margin: 0;
+    padding: 0%;
+    font-family: 'Cochin';
+    font-size:20px;
+    
+}
+p{
+    text-align: center;
+    
+}
+b{
+    color: rgb(3, 33, 122);
+}
+h3{
+    color: rgb(3, 33, 122);
+    text-align: center;
+    font-weight: bolder;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #080808;
+    color: #fff;
+ 
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
